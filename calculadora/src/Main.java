@@ -13,9 +13,9 @@ public class Main {
         char operator = sc.next().charAt(0);
 
         boolean isWrongOperator = operator != '+'
-                || operator != '-'
-                || operator != '*'
-                || operator != '/';
+                && operator != '-'
+                && operator != '*'
+                && operator != '/';
 
         if (isWrongOperator) {
             System.out.println("Wrong operator! Please introduce a new operator");
