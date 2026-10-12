@@ -10,14 +10,24 @@ public class Main {
         double firstValue = sc.nextDouble();
 
         System.out.print("Operador value: ");
-        String operador = sc.next();
+        char operator = sc.next().charAt(0);
+
+        boolean isWrongOperator = operator != '+'
+                || operator != '-'
+                || operator != '*'
+                || operator != '/';
+
+        if (isWrongOperator) {
+            System.out.println("Wrong operator! Please introduce a new operator");
+            return;
+        }
 
         System.out.print("Second value: ");
         double secondValue = sc.nextDouble();
 
         double result = 0;
 
-        switch (operador.charAt(0)) {
+        switch (operator) {
             case '+' -> result = firstValue + secondValue;
             case '-' -> result = firstValue - secondValue;
             case '*' -> result = firstValue * secondValue;
